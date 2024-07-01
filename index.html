@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#273757"/>
+    <title>Blueprint | RAE</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet">
+    <link href="theme.css" rel="stylesheet">
+    <link href="./blueprint-icon.png" type="image/x-icon" rel="icon">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: -1;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="https://www.dunrae.com"><img src="blueprint-logo-white.png" alt="logo" class="logo" style="height: 7.5vh;"></a>
+    <div id="map"></div>
+    <script>
+
+        // Only exposed since its a public access token, apparently this is okay... But it feels wrong? :/
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZHVueCIsImEiOiJja2UzYW96a2YwNGswMnJwbGJvcnRtejZpIn0.1hCPG-T_q9josI-gyJJUAw'
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/dunx/cly1m7tu700b101qog6pz3j9o',
+            zoom: 11,
+            pitch: 60,
+            center: [-75.7011, 45.3947]
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+        map.scrollZoom.enable();
+
+        map.on('style.load', () => {
+            map.setFog({}); // Set the default atmosphere style
+        });
+
+        // The following values can be changed to control rotation speed:
+
+        // At low zooms, complete a revolution every two minutes.
+        const secondsPerRevolution = 240;
+        // Above zoom level 5, do not rotate.
+        const maxSpinZoom = 5;
+        // Rotate at intermediate speeds between zoom levels 3 and 5.
+        const slowSpinZoom = 3;
+
+        let userInteracting = false;
+
+
+        function rotateCamera(timestamp) {
+            const zoom = map.getZoom();
+            if (!userInteracting) {
+                // clamp the rotation between 0 -360 degrees
+                // Divide timestamp by 100 to slow rotation to ~10 degrees / sec
+                map.rotateTo((timestamp / 300) % 360, { duration: 0 });
+                // Request the next frame of the animation.
+                requestAnimationFrame(rotateCamera);
+            }}
+
+            map.on('load', () => {
+                // Start the animation.
+                rotateCamera(0);
+
+                // Pause spinning on interaction
+                map.on('mousedown', () => {
+                    userInteracting = true;
+                });
+                map.on('dragstart', () => {
+                    userInteracting = true;
+                });
+            })
+        
+
+
+            // Change the cursor to a pointer when the mouse is over the places layer.
+            map.on('mouseenter', 'marker', () => {
+                map.getCanvas().style.cursor = 'pointer';
+            });
+
+            // Change it back to a pointer when it leaves.
+            map.on('mouseleave', 'marker', () => {
+                map.getCanvas().style.cursor = '';
+            });
+    </script>
+
+
+    <script>
+            new mapboxgl.Popup(
+                {
+                    
+                }
+            )
+                .setLngLat([-75.7011, 45.3947])
+                .setHTML('<h1 style:"line-height=10.0">Welcome to Blueprint, by <br><a href="https://www.dunrae.com">RAE Spatial Design</a>.</h1><h3>This map features our designs, renders, and sketches on how to improve areas and solve problems around Ottawa. <br><br> Feel free to take a look around.</h3>')
+                .setMaxWidth("400px")
+                .addTo(map);
+
+            // Create a default Marker and add it to the map.
+            // King-Edward Ave, Street Design
+            new mapboxgl.Marker({
+                color: "#FFFFFF",
+                scale: "1.0",
+            })
+                .setLngLat([-75.68603, 45.42906])
+                .setPopup(new mapboxgl.Popup().setHTML(
+                    '<div><strong><a href="https://www.dunrae.com/fisher-ave">King Edward Ave Redesign</a></strong><br><img src="https://ot67.ca/wp-content/uploads/2024/03/kinged001.png?w=1024"></img><p>A redesign that brings the avenue back to it&apos;s beautiful origins.</p>'
+                ))
+                .addTo(map);
+
+            // Fisher Ave, Street Design
+            new mapboxgl.Marker({
+                color: "#FFFFFF",
+                scale: "1.0",
+            })
+                .setLngLat([-75.71549, 45.36973])
+                .setPopup(new mapboxgl.Popup().setHTML('<h1><a href="https://www.dunrae.com/fisher-ave">Fisher Ave Redesign</a></h1><p>A simple, green mainstreet for all to enjoy.</p>'
+                ))
+                .addTo(map);
+
+
+
+    </script>
+
+</body>
+
+</html>

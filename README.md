@@ -5,7 +5,7 @@ The codebase for hosting the webmap is licensed under the CC0 v1.
 
 However, all designs, renders, and other personal works included within are subject to copyright.
 
-This map uses mapbox for the underlying system, and is hosted via github pages.
+This map uses mapbox-gl-js for the underlying system, and is hosted via github pages.
 
 Cheers,
 Duncan Rae
