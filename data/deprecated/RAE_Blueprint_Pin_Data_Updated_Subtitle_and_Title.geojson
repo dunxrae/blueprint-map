@@ -1,0 +1,921 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.68603,
+                    45.42906
+                ]
+            },
+            "properties": {
+                "id": "king-edward",
+                "name": "King Edward Ave Redesign",
+                "description": "<strong></strong><br><h1>King Edward Ave Redesign</h1>",
+                "icon": "marker-finished"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.71549,
+                    45.36973
+                ]
+            },
+            "properties": {
+                "id": "fisher-ave",
+                "name": "Fisher Ave Redesign",
+                "description": "<strong></strong><br><h1>Fisher Ave Redesign</h1>",
+                "icon": "marker-finished"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.71553724,
+                    45.3698047
+                ]
+            },
+            "properties": {
+                "id": 1,
+                "name": "Fisher Ave",
+                "subtitle": "Street Redesign",
+                "icon": "marker-finished",
+                "description": "<strong>Street Redesign</strong><br><h1>Fisher Ave</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.68595732,
+                    45.428973
+                ]
+            },
+            "properties": {
+                "id": 2,
+                "name": "King Edward Ave",
+                "subtitle": "Street Redesign",
+                "icon": "marker-wip",
+                "description": "<strong>Street Redesign</strong><br><h1>King Edward Ave</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.66782116,
+                    45.41041744
+                ]
+            },
+            "properties": {
+                "id": 3,
+                "name": "Hurdman Village",
+                "subtitle": "Urban Development",
+                "icon": "marker-sketch",
+                "description": "<strong>Urban Development</strong><br><h1>Hurdman Village</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.78582019,
+                    45.3498297
+                ]
+            },
+            "properties": {
+                "id": 4,
+                "name": "Little Stockholm",
+                "subtitle": "Urban Development",
+                "icon": "marker-sketch",
+                "description": "<strong>Urban Development</strong><br><h1>Little Stockholm</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.34611805,
+                    51.72720704
+                ]
+            },
+            "properties": {
+                "id": 5,
+                "name": "Grade Separated \nTurbo Roundabout",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-reference",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Grade Separated \nTurbo Roundabout</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    5.108370632,
+                    52.07191571
+                ]
+            },
+            "properties": {
+                "id": 6,
+                "name": "Merwede, Utrecht, NL",
+                "subtitle": "Urban Development",
+                "icon": "marker-reference",
+                "description": "<strong>Urban Development</strong><br><h1>Merwede, Utrecht, NL</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -123.1954449,
+                    49.26705779
+                ]
+            },
+            "properties": {
+                "id": 7,
+                "name": "Jericho Lands, BC, CA",
+                "subtitle": "Urban Development",
+                "icon": "marker-reference",
+                "description": "<strong>Urban Development</strong><br><h1>Jericho Lands, BC, CA</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.79960822,
+                    45.43446475
+                ]
+            },
+            "properties": {
+                "id": 8,
+                "name": "Agora, Le Plateau,\nGatineau, QC, CA",
+                "subtitle": "Urban Development",
+                "icon": "marker-reference",
+                "description": "<strong>Urban Development</strong><br><h1>Agora, Le Plateau,\nGatineau, QC, CA</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.75510932,
+                    45.39152489
+                ]
+            },
+            "properties": {
+                "id": 9,
+                "name": "Westboro Ped. Infill \n(Danforth, Madison, \nRichmond)",
+                "subtitle": "Urban Development",
+                "icon": "marker-sketch",
+                "description": "<strong>Urban Development</strong><br><h1>Westboro Ped. Infill \n(Danforth, Madison, \nRichmond)</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.75452647,
+                    45.39094619
+                ]
+            },
+            "properties": {
+                "id": 10,
+                "name": "Danforth Ave",
+                "subtitle": "Urban Development",
+                "icon": "marker-wip",
+                "description": "<strong>Urban Development</strong><br><h1>Danforth Ave</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.69834701,
+                    45.42332235
+                ]
+            },
+            "properties": {
+                "id": 11,
+                "name": "Wellington St./\nParliamentary Precinct",
+                "subtitle": "Urban Development &\nInfrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Urban Development &\nInfrastructure Design</strong><br><h1>Wellington St./\nParliamentary Precinct</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.69494243,
+                    45.41375959
+                ]
+            },
+            "properties": {
+                "id": 12,
+                "name": "Centretown Road\nNetwork Design",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-sketch",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Centretown Road\nNetwork Design</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.66430479,
+                    45.41235328
+                ]
+            },
+            "properties": {
+                "id": 13,
+                "name": "Hurdman Station\nCurve Realignment",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-sketch",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Hurdman Station\nCurve Realignment</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.7262144,
+                    45.38941717
+                ]
+            },
+            "properties": {
+                "id": 14,
+                "name": "The Carling Peanut",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-sketch",
+                "description": "<strong>Infrastructure Design</strong><br><h1>The Carling Peanut</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.6840666,
+                    45.39715058
+                ]
+            },
+            "properties": {
+                "id": 15,
+                "name": "Lansdowne and Bank\nStreet Designs",
+                "subtitle": "Urban Development &\nInfrastructure Design",
+                "icon": "marker-sketch",
+                "description": "<strong>Urban Development &\nInfrastructure Design</strong><br><h1>Lansdowne and Bank\nStreet Designs</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.14777062,
+                    45.005657
+                ]
+            },
+            "properties": {
+                "id": 16,
+                "name": "5 Towns West-End",
+                "subtitle": "Urban Development",
+                "icon": "marker-sketch",
+                "description": "<strong>Urban Development</strong><br><h1>5 Towns West-End</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.71895142,
+                    45.40818382
+                ]
+            },
+            "properties": {
+                "id": 17,
+                "name": "City Centre Massing",
+                "subtitle": "Urban Development",
+                "icon": "marker-sketch",
+                "description": "<strong>Urban Development</strong><br><h1>City Centre Massing</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.71546095,
+                    45.40722101
+                ]
+            },
+            "properties": {
+                "id": 18,
+                "name": "1010 Somerset / \nPlant Bath & \nRecreation Center",
+                "subtitle": "Urban Development",
+                "icon": "marker-finished",
+                "description": "<strong>Urban Development</strong><br><h1>1010 Somerset / \nPlant Bath & \nRecreation Center</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.7070233,
+                    45.41173515
+                ]
+            },
+            "properties": {
+                "id": 19,
+                "name": "Cambridge St North\nWoonerf Design / \nTraffic Calming",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-reference",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Cambridge St North\nWoonerf Design / \nTraffic Calming</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.70522976,
+                    45.27064303
+                ]
+            },
+            "properties": {
+                "id": 20,
+                "name": "Strandherd Roundabout\n& Land Use",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-sketch",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Strandherd Roundabout\n& Land Use</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.7293381,
+                    45.34388801
+                ]
+            },
+            "properties": {
+                "id": 21,
+                "name": "Viewmount Intersection\nQuickBuild Safety\nImprovements",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-sketch",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Viewmount Intersection\nQuickBuild Safety\nImprovements</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.69307155,
+                    45.39940147
+                ]
+            },
+            "properties": {
+                "id": 22,
+                "name": "Fifth&Percy Modal\nFilter & Photomatch",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-wip",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Fifth&Percy Modal\nFilter & Photomatch</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.6982268,
+                    45.41410547
+                ]
+            },
+            "properties": {
+                "id": 23,
+                "name": "Kent/O'Connor\nStreet Redesign",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Kent/O'Connor\nStreet Redesign</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.70528142,
+                    45.41258647
+                ]
+            },
+            "properties": {
+                "id": 24,
+                "name": "Cooper Street\nWoonerf/Traffic Calming",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Cooper Street\nWoonerf/Traffic Calming</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.65837993,
+                    45.36114903
+                ]
+            },
+            "properties": {
+                "id": 25,
+                "name": "Greenboro P&R",
+                "subtitle": "Urban Development",
+                "icon": "marker-wip",
+                "description": "<strong>Urban Development</strong><br><h1>Greenboro P&R</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.7538411,
+                    45.36026261
+                ]
+            },
+            "properties": {
+                "id": 26,
+                "name": "Agincourt Park\nRedesign",
+                "subtitle": "Urban Development",
+                "icon": "marker-finished",
+                "description": "<strong>Urban Development</strong><br><h1>Agincourt Park\nRedesign</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.74542606,
+                    45.371054
+                ]
+            },
+            "properties": {
+                "id": 27,
+                "name": "Clyde Woods: NCC\nBistro and Cable Car",
+                "subtitle": "Urban Development",
+                "icon": "marker-sketch",
+                "description": "<strong>Urban Development</strong><br><h1>Clyde Woods: NCC\nBistro and Cable Car</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.69371206,
+                    45.42464538
+                ]
+            },
+            "properties": {
+                "id": 28,
+                "name": "Returning Rail to \nOttawa Union Station",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-wip",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Returning Rail to \nOttawa Union Station</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.66830544,
+                    45.41054001
+                ]
+            },
+            "properties": {
+                "id": 29,
+                "name": "Hurdman Village",
+                "subtitle": "Urban Development",
+                "icon": "marker-wip",
+                "description": "<strong>Urban Development</strong><br><h1>Hurdman Village</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.71943474,
+                    45.40055241
+                ]
+            },
+            "properties": {
+                "id": 30,
+                "name": "Bywalk/Ottawa Avenue",
+                "subtitle": "Infrastructure Design &\nUrban Development",
+                "icon": "marker-sketch",
+                "description": "<strong>Infrastructure Design &\nUrban Development</strong><br><h1>Bywalk/Ottawa Avenue</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -76.1887127,
+                    41.49939153
+                ]
+            },
+            "properties": {
+                "id": 31,
+                "name": "HSR Capital Loop",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-basic",
+                "description": "<strong>Infrastructure Design</strong><br><h1>HSR Capital Loop</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.70706604,
+                    45.40269895
+                ]
+            },
+            "properties": {
+                "id": 32,
+                "name": "Booth St Buildings\nRecreation",
+                "subtitle": "Urban Development",
+                "icon": "marker-finished",
+                "description": "<strong>Urban Development</strong><br><h1>Booth St Buildings\nRecreation</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.73408329,
+                    45.35251959
+                ]
+            },
+            "properties": {
+                "id": 33,
+                "name": "Undertrack Infill\nDesigns",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-wip",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Undertrack Infill\nDesigns</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.71717108,
+                    45.39339662
+                ]
+            },
+            "properties": {
+                "id": 34,
+                "name": "Carling Colonnades",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Carling Colonnades</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.68786305,
+                    45.40210456
+                ]
+            },
+            "properties": {
+                "id": 35,
+                "name": "Bank St Transit Mall",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Bank St Transit Mall</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.68529995,
+                    45.435651
+                ]
+            },
+            "properties": {
+                "id": 36,
+                "name": "Rose Tunnel",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-sketch",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Rose Tunnel</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.70290478,
+                    45.39577002
+                ]
+            },
+            "properties": {
+                "id": 37,
+                "name": "Dow's Lake Causeway",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-sketch",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Dow's Lake Causeway</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.90910718,
+                    45.33762932
+                ]
+            },
+            "properties": {
+                "id": 38,
+                "name": "March Road / Kanata\nNorth Station",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Infrastructure Design</strong><br><h1>March Road / Kanata\nNorth Station</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.76060741,
+                    45.35138676
+                ]
+            },
+            "properties": {
+                "id": 39,
+                "name": "College Quarter",
+                "subtitle": "Urban Development",
+                "icon": "marker-wip",
+                "description": "<strong>Urban Development</strong><br><h1>College Quarter</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.7479705,
+                    45.36431654
+                ]
+            },
+            "properties": {
+                "id": 40,
+                "name": "Maitland Peanut",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Maitland Peanut</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.74214021,
+                    45.36145557
+                ]
+            },
+            "properties": {
+                "id": 41,
+                "name": "Manor Towers Adaptive\nReuse/Renovation",
+                "subtitle": "Urban Development",
+                "icon": "marker-finished",
+                "description": "<strong>Urban Development</strong><br><h1>Manor Towers Adaptive\nReuse/Renovation</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.79674316,
+                    45.34029763
+                ]
+            },
+            "properties": {
+                "id": 42,
+                "name": "Donnington Square",
+                "subtitle": "Urban Development",
+                "icon": "marker-finished",
+                "description": "<strong>Urban Development</strong><br><h1>Donnington Square</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.72961617,
+                    45.38613227
+                ]
+            },
+            "properties": {
+                "id": 43,
+                "name": "Veteran Ave",
+                "subtitle": "Urban Development",
+                "icon": "marker-finished",
+                "description": "<strong>Urban Development</strong><br><h1>Veteran Ave</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.6549392,
+                    45.35383034
+                ]
+            },
+            "properties": {
+                "id": 44,
+                "name": "South Keys\nTransit Plaza",
+                "subtitle": "Urban Development &\nInfrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Urban Development &\nInfrastructure Design</strong><br><h1>South Keys\nTransit Plaza</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.75284596,
+                    45.37793242
+                ]
+            },
+            "properties": {
+                "id": 45,
+                "name": "Carling LRT",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Carling LRT</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.76890122,
+                    45.37092692
+                ]
+            },
+            "properties": {
+                "id": 46,
+                "name": "Carling Elv Rail",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Carling Elv Rail</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.76031985,
+                    45.35960499
+                ]
+            },
+            "properties": {
+                "id": 47,
+                "name": "Iris/NCC Path",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-finished",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Iris/NCC Path</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.72414908,
+                    45.35491587
+                ]
+            },
+            "properties": {
+                "id": 48,
+                "name": "Charkay Courtyard",
+                "subtitle": "Urban Development",
+                "icon": "marker-finished",
+                "description": "<strong>Urban Development</strong><br><h1>Charkay Courtyard</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.70459731,
+                    45.43026108
+                ]
+            },
+            "properties": {
+                "id": 49,
+                "name": "Fallen Tree Bridge",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-reference",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Fallen Tree Bridge</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.7994573,
+                    45.37757785
+                ]
+            },
+            "properties": {
+                "id": 50,
+                "name": "Deschenes Rapids\nPed&Cyc Bridge",
+                "subtitle": "Infrastructure Design",
+                "icon": "marker-reference",
+                "description": "<strong>Infrastructure Design</strong><br><h1>Deschenes Rapids\nPed&Cyc Bridge</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.72979708,
+                    45.41521311
+                ]
+            },
+            "properties": {
+                "id": 51,
+                "name": "Lemieux Island\nAmusement Park?",
+                "subtitle": "Urban Development",
+                "icon": "marker-basic",
+                "description": "<strong>Urban Development</strong><br><h1>Lemieux Island\nAmusement Park?</h1>"
+            }
+        },
+        {
+            "type": "Feature",
+            "geometry": {
+                "type": "Point",
+                "coordinates": [
+                    -75.73517782,
+                    45.41216253
+                ]
+            },
+            "properties": {
+                "id": 52,
+                "name": "Penicillin Park",
+                "subtitle": "Urban Development",
+                "icon": "marker-sketch",
+                "description": "<strong>Urban Development</strong><br><h1>Penicillin Park</h1>"
+            }
+        }
+    ]
+}
