@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="theme-color" content="#273757" />
+    <title>Blueprint | RAE</title>
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet">
+    <link href="theme.css" rel="stylesheet">
+    <link href="./blueprint-icon.png" type="image/x-icon" rel="icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: -1;
+            text-decoration: none;
+        }
+
+        .marker {
+            background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
+            background-size: cover;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .mapboxgl-popup {
+            max-width: 200px;
+        }
+
+        /* Modal styles */
+        .modal {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #ffffff;
+            padding: 20px 40px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: auto;
+            /* Center the modal */
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            transform: translateY(-60%);
+            /* Adjust for perfect vertical centering */
+            position: relative;
+            top: 50%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .modal-content h2,
+        .modal-content p {
+            color: #333;
+        }
+
+        .pin-legend {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .pin-legend-item {
+            text-align: center;
+        }
+
+        .pin-legend-item img {
+            display: block;
+            margin: 0 auto;
+            width: 40px;
+            height: 40px;
+        }
+
+        .pin-legend-item span {
+            display: block;
+            margin-top: 5px;
+            color: #333;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Modal content -->
+    <div id="welcomeModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Welcome to Blueprint</h2>
+            <p>This map features designs, renders, and sketches on how to improve areas and solve problems around
+                Ottawa. Most have been designed by myself, however, there are multiple references to other great designs
+                made by those in the NCR and abroad. Feel free to take a look around.</p>
+            <p>Cheers,<br>Duncan Rae</p>
+            <div class="pin-legend">
+                <div class="pin-legend-item">
+                    <img src="marker-icons/MARKER-FINISHED.png" alt="Finished Icon">
+                    <span>Finished</span>
+                </div>
+                <div class="pin-legend-item">
+                    <img src="marker-icons/MARKER-WIP.png" alt="WIP Icon">
+                    <span>WIP</span>
+                </div>
+                <div class="pin-legend-item">
+                    <img src="marker-icons/MARKER-SKETCH.png" alt="Sketch Icon">
+                    <span>Sketch</span>
+                </div>
+                <div class="pin-legend-item">
+                    <img src="marker-icons/MARKER-IDEA.png" alt="Idea Icon">
+                    <span>Idea</span>
+                </div>
+                <div class="pin-legend-item">
+                    <img src="marker-icons/MARKER-REFERENCE.png" alt="Reference Icon">
+                    <span>Reference</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://www.dunrae.com"><img src="blueprint-logo-white.png" alt="logo" class="logo"
+            style="height: 7.5vh;"></a>
+    <div id="map"></div>
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1IjoiZHVueCIsImEiOiJja2UzYW96a2YwNGswMnJwbGJvcnRtejZpIn0.1hCPG-T_q9josI-gyJJUAw';
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/dunx/cly1m7tu700b101qog6pz3j9o',
+            zoom: 11,
+            pitch: 60,
+            center: [-75.7011, 45.3947]
+        });
+
+        map.addControl(new mapboxgl.NavigationControl());
+        map.scrollZoom.enable();
+
+        map.on('style.load', () => {
+            map.setFog({});
+        });
+
+        let userInteracting = false;
+
+        function rotateCamera(timestamp) {
+            const zoom = map.getZoom();
+            if (!userInteracting) {
+                map.rotateTo((timestamp / 300) % 360, { duration: 0 });
+                requestAnimationFrame(rotateCamera);
+            }
+        }
+
+        let allFeatures = [];
+
+        map.on('load', () => {
+            rotateCamera(0);
+            map.on('mousedown', () => { userInteracting = true; });
+            map.on('dragstart', () => { userInteracting = true; });
+
+            // Load GeoJSON data and add it to the map
+            fetch('./allpins.geojson')
+                .then(response => response.json())
+                .then(data => {
+                    allFeatures = data.features;
+                    console.log('All features loaded:', allFeatures);
+
+                    map.addSource("allpins", {
+                        "type": "geojson",
+                        "data": data
+                    });
+
+                    // Add custom icons to the map
+                    map.loadImage('marker-icons/MARKER-FINISHED.png', (error, image) => {
+                        if (error) throw error;
+                        map.addImage('marker-finished', image);
+                    });
+
+                    map.loadImage('marker-icons/MARKER-WIP.png', (error, image) => {
+                        if (error) throw error;
+                        map.addImage('marker-wip', image);
+                    });
+
+                    map.loadImage('marker-icons/MARKER-SKETCH.png', (error, image) => {
+                        if (error) throw error;
+                        map.addImage('marker-sketch', image);
+                    });
+
+                    map.loadImage('marker-icons/MARKER-IDEA.png', (error, image) => {
+                        if (error) throw error;
+                        map.addImage('marker-idea', image);
+                    });
+
+                    map.loadImage('marker-icons/MARKER-REFERENCE.png', (error, image) => {
+                        if (error) throw error;
+                        map.addImage('marker-reference', image);
+                    });
+
+                    map.addLayer({
+                        'id': 'allpins',
+                        'type': 'symbol',
+                        'source': 'allpins',
+                        'layout': {
+                            'icon-image': ['get', 'icon'],
+                            'icon-size': 0.25,
+                        }
+                    });
+
+                    // Add popups to markers
+                    map.on('click', 'allpins', (e) => {
+                        const coordinates = e.features[0].geometry.coordinates.slice();
+                        const description = e.features[0].properties.description;
+
+                        while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                        }
+
+                        const popup = new mapboxgl.Popup()
+                            .setLngLat(coordinates)
+                            .setHTML(description)
+                            .addTo(map);
+
+                        // Add event listeners to links within the popup
+                        setTimeout(addPopupLinkListeners, 250); // Delay to ensure DOM is updated
+                    });
+
+                    // Change the cursor to a pointer when the mouse is over the places layer.
+                    map.on('mouseenter', 'allpins', () => {
+                        map.getCanvas().style.cursor = 'pointer';
+                    });
+
+                    // Change it back to a pointer when it leaves.
+                    map.on('mouseleave', 'allpins', () => {
+                        map.getCanvas().style.cursor = '';
+                    });
+                });
+
+            // Function to add event listeners to links inside popups
+            function addPopupLinkListeners() {
+                console.log('Adding popup link listeners');
+                document.querySelectorAll('.link-to-pin').forEach(link => {
+                    console.log('Link found:', link); // Debugging log for each link found
+                    link.addEventListener('click', function (event) {
+                        event.preventDefault();
+                        const pinId = this.getAttribute('data-pin-id');
+                        console.log('Link clicked, pin ID:', pinId); // Debugging log
+
+                        // Find the target feature from all loaded features
+                        const targetFeature = allFeatures.find(feature => feature.properties.id === pinId);
+                        console.log('Target feature:', targetFeature); // Debugging log
+
+                        if (targetFeature) {
+                            map.flyTo({ center: targetFeature.geometry.coordinates, zoom: 15 });
+                        } else {
+                            console.log('Target feature not found');
+                        }
+                    });
+                });
+            }
+        });
+
+        // Modal functionality
+        const modal = document.getElementById("welcomeModal");
+        const span = document.getElementsByClassName("close")[0];
+
+        // Show the modal when the page loads
+        window.onload = function () {
+            modal.style.display = "block";
+        };
+
+        // Close the modal when the user clicks on the close button
+        span.onclick = function () {
+            modal.style.display = "none";
+        };
+
+        // Also close the modal if the user clicks outside of it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+    </script>
+</body>
+
+</html>
