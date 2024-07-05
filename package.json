@@ -4,6 +4,7 @@
     "maki": "^2.1.0",
     "mapbox": "^1.0.0-beta10",
     "mapbox-gl": "^3.4.0",
+    "python": "^0.0.4",
     "react": "^18.3.1",
     "react-map-gl": "^7.1.7"
   }

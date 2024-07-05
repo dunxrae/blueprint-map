@@ -1,1 +1,4 @@
 .env
+/img
+/data-conversion/.venv
+/data-conversion/myenv
