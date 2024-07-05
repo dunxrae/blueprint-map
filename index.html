@@ -11,120 +11,14 @@
     <link href="./blueprint-icon.png" type="image/x-icon" rel="icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Inter', sans-serif;
-        }
-
-        #map {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            width: 100%;
-            z-index: -1;
-            text-decoration: none;
-        }
-
-        .marker {
-            background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
-            background-size: cover;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-        .mapboxgl-popup {
-            max-width: 200px;
-        }
-
-        /* Modal styles */
-        .modal {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.4);
-        }
-
-        .modal-content {
-            background-color: #ffffff;
-            padding: 20px 40px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 800px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: auto;
-            /* Center the modal */
-            display: flex;
-            flex-direction: column;
-            align-items: left;
-            transform: translateY(-60%);
-            /* Adjust for perfect vertical centering */
-            position: relative;
-            top: 50%;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        .modal-content h2,
-        .modal-content p {
-            color: #333;
-        }
-
-        .pin-legend {
-            display: flex;
-            justify-content: space-around;
-            margin-top: 20px;
-        }
-
-        .pin-legend-item {
-            text-align: center;
-        }
-
-        .pin-legend-item img {
-            display: block;
-            margin: 0 auto;
-            width: 40px;
-            height: 40px;
-        }
-
-        .pin-legend-item span {
-            display: block;
-            margin-top: 5px;
-            color: #333;
-            font-size: 14px;
-        }
-    </style>
 </head>
 
 <body>
     <!-- Modal content -->
-    <div id="welcomeModal" class="modal">
-        <div class="modal-content">
+    <div id="welcomeModal" class="welcome-modal">
+        <div class="welcome-modal-content">
             <span class="close">&times;</span>
-            <h2>Welcome to Blueprint</h2>
+            <h2>Welcome to Blueprint, by RAE Spatial Design.</h2>
             <p>This map features designs, renders, and sketches on how to improve areas and solve problems around
                 Ottawa. Most have been designed by myself, however, there are multiple references to other great designs
                 made by those in the NCR and abroad. Feel free to take a look around.</p>
@@ -136,7 +30,7 @@
                 </div>
                 <div class="pin-legend-item">
                     <img src="marker-icons/MARKER-WIP.png" alt="WIP Icon">
-                    <span>WIP</span>
+                    <span>Unfinished</span>
                 </div>
                 <div class="pin-legend-item">
                     <img src="marker-icons/MARKER-SKETCH.png" alt="Sketch Icon">
@@ -144,7 +38,7 @@
                 </div>
                 <div class="pin-legend-item">
                     <img src="marker-icons/MARKER-IDEA.png" alt="Idea Icon">
-                    <span>Idea</span>
+                    <span>Quick Idea</span>
                 </div>
                 <div class="pin-legend-item">
                     <img src="marker-icons/MARKER-REFERENCE.png" alt="Reference Icon">
@@ -156,7 +50,16 @@
 
     <a href="https://www.dunrae.com"><img src="blueprint-logo-white.png" alt="logo" class="logo"
             style="height: 7.5vh;"></a>
+
     <div id="map"></div>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="image-modal">
+        <span class="modal-close">&times;</span>
+        <img class="image-modal-content" id="modalImage">
+    </div>
+    <!-- Image Modal -->
+
     <script>
         mapboxgl.accessToken = 'pk.eyJ1IjoiZHVueCIsImEiOiJja2UzYW96a2YwNGswMnJwbGJvcnRtejZpIn0.1hCPG-T_q9josI-gyJJUAw';
         const map = new mapboxgl.Map({
@@ -190,17 +93,47 @@
             rotateCamera(0);
             map.on('mousedown', () => { userInteracting = true; });
             map.on('dragstart', () => { userInteracting = true; });
+            map.on('click', () => { userInteracting = true; });
 
             // Load GeoJSON data and add it to the map
-            fetch('./allpins.geojson')
+            fetch('./pindata-002.geojson')
                 .then(response => response.json())
                 .then(data => {
                     allFeatures = data.features;
-                    console.log('All features loaded:', allFeatures);
+
+                    // Update each feature with custom HTML for popups
+                    allFeatures = allFeatures.map(feature => {
+                        const name = feature.properties.name || '';
+                        const prefix = feature.properties.prefix || '';
+                        const description = feature.properties.description || '';
+                        const image_url = feature.properties.image_url || '';
+                        const link_url = feature.properties.link_url || '';
+
+                        // Determine if the popup should have an image or not
+                        const hasImage = !!image_url;
+                        const imageHtml = hasImage ? `<img src="${image_url}" alt="image" class="popup-image" onclick="showModal('${image_url}')">` : '';
+                        const popupClass = hasImage ? 'custom-popup' : 'custom-popup no-image';
+
+                        const customHtml = `
+                            <div class="${popupClass}">
+                            ${imageHtml}
+                            <div class="popup-info">
+                                <strong>${prefix}</strong><br>
+                                <h1><a href='${link_url}' >${name}</a></h1>
+                                <h3>${description}</h3>
+                            </div>
+                            </div>
+                    `;
+                        feature.properties.description = customHtml;
+                        return feature;
+                    });
 
                     map.addSource("allpins", {
                         "type": "geojson",
-                        "data": data
+                        "data": {
+                            "type": "FeatureCollection",
+                            "features": allFeatures
+                        }
                     });
 
                     // Add custom icons to the map
@@ -229,6 +162,7 @@
                         map.addImage('marker-reference', image);
                     });
 
+                    // Add marker layer
                     map.addLayer({
                         'id': 'allpins',
                         'type': 'symbol',
@@ -254,7 +188,7 @@
                             .addTo(map);
 
                         // Add event listeners to links within the popup
-                        setTimeout(addPopupLinkListeners, 250); // Delay to ensure DOM is updated
+                        setTimeout(addPopupLinkListeners, 250); // Reduced delay
                     });
 
                     // Change the cursor to a pointer when the mouse is over the places layer.
@@ -313,7 +247,33 @@
             }
         };
 
+        // Added for image modals:
+        // Function to show the modal
+        function showModal(imageUrl) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImage");
+            modal.style.display = "block";
+            modalImg.src = imageUrl;
+        }
+
+        // Function to close the modal
+        document.querySelector(".modal-close").onclick = function () {
+            const modal = document.getElementById("imageModal");
+            modal.style.display = "none";
+        };
+
+        // Also close the modal if the user clicks outside of the image
+        window.onclick = function (event) {
+            const modal = document.getElementById("imageModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        // ^^ Added for image modals
+
     </script>
+
 </body>
 
 </html>

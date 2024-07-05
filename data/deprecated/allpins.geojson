@@ -1,22 +1,22 @@
 {
   "type": "FeatureCollection",
   "features": [
-      {
-          "type": "Feature",
-          "geometry": {
-              "type": "Point",
-              "coordinates": [
-                  -75.68603,
-                  45.42906
-              ]
-          },
-          "properties": {
-              "id": "king-edward",
-              "name": "King Edward Ave Redesign",
-              "description": "<strong>Infrastructure Design</strong><br><h1>King Edward Ave Redesign</h1>",
-              "icon": "marker-finished"
-          }
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-75.68603, 45.42906]
       },
+      "properties": {
+        "id": "king-edward",
+        "name": "King Edward Ave Redesign",
+        "subtitle": "Street Redesign",
+        "icon": "marker-finished",
+        "image_url": "https://ot67.ca/wp-content/uploads/2024/03/kinged001.png?w=2048",
+        "description": "A redesign that brings the avenue back to its beautiful origins."
+      }
+    },
+
       {
           "type": "Feature",
           "geometry": {

@@ -1,0 +1,130 @@
+RAE | Blueprint | Pin Data,,,,,,,,,,,,,
+Duncan Rae | 1 July 2024,,,,,,,,,,,,,
+id,icon,name,prefix,visibility,latitude,longitude,image_url,link_url,tags,description,internal_reference,internal_description,date_created
+1,Finished Design,Fisher Ave,Street Redesign,PUB,45.3698047,-75.71553724,https://dunrae.com/wp-content/uploads/2024/07/fisher-003.png,,,,,,
+2,WIP Design,King Edward Ave,Street Redesign,PUB,45.428973,-75.68595732,https://dunrae.com/wp-content/uploads/2024/07/kinged001.png,,OT67,,,,
+3,Sketch,Hurdman Village,Urban Development,PUB,45.41041744,-75.66782116,,,,,,,
+4,Sketch,Little Stockholm,Urban Development,PUB,45.3498297,-75.78582019,,,,,College Ward pg 4,,29 Apr 2022
+5,Reference,"Grade Separated 
+Turbo Roundabout",Infrastructure Design,PUB,51.72720704,5.34611805,,,,,,,
+6,Reference,"Merwede, Utrecht, NL",Urban Development,PUB,52.07191571,5.108370632,https://merwede.nl/wp-content/uploads/2023/07/LOLA-LMU-20230607-merwede-overzicht-birdseye-1536x864.jpg,https://merwede.nl/,,,,,
+7,Reference,"Jericho Lands, BC",Urban Development,PUB,49.26705779,-123.1954449,https://www.clc-sic.ca/sites/default/files/styles/1_scale_large/public/images/Jericho%202%20Transit%20Plaza%202023%2010%2023.jpg?itok=-dw0oYoX,https://www.clc-sic.ca/real-estate/jericho-lands,,,,,
+8,Reference,Agora in Le Plateau,Urban Development,PUB,45.43446475,-75.79960822,https://dunrae.com/wp-content/uploads/2024/07/agora001.jpeg,https://beyondtheautomobile.com/2023/06/05/is-this-the-suburbs-first-impressions-of-gatineaus-agora-development/,,,,,
+9,Sketch,Westboro Village,Urban Development,PUB,45.39152489,-75.75510932,,,,,World Design pg 72-74,"Westboro Ped. Infill 
+(Danforth, Madison, 
+Richmond)",1 Feb 2023
+10,WIP Design,Danforth Ave,Urban Development,PUB,45.39094619,-75.75452647,https://dunrae.com/wp-content/uploads/2024/07/danforth001.png,,,,Renders (Drive),,
+11,Finished Design,"Wellington St. &
+Parliamentary Precinct","Urban Development &
+Infrastructure Design",PUB-ish,45.42332235,-75.69834701,https://dunrae.com/wp-content/uploads/2024/07/wellington-083.png,,,,"World Design pg 118-122
+Wellington Notebook
+Renders (Drive)",,
+12,Sketch,"Centretown Road
+Network Design",Infrastructure Design,PUB,45.41375959,-75.69494243,,,,,World Design pg 123-128,,
+13,Sketch,"Hurdman Station
+Curve Realignment",Infrastructure Design,PUB,45.41235328,-75.66430479,,,,,World Design pg 132-133,,
+14,Sketch,The Carling Peanut,Infrastructure Design,PUB,45.38941717,-75.7262144,,,,,World Design pg 134-137,,
+15,Sketch,"Lansdowne and Bank
+Street Designs","Urban Development &
+Infrastructure Design",PUB,45.39715058,-75.6840666,,,,,World Design pg 143-150,,
+16,Sketch,5 Towns West-End,Urban Development,PUB,45.005657,-76.14777062,,,,,World Design pg 158,,
+17,Sketch,City Centre Massing,Urban Development,PUB,45.40818382,-75.71895142,,,,,World Design pg 159,,
+18,Finished Design,"1010 Somerset / 
+Plant Bath & 
+Recreation Center",Urban Development,PUB,45.40722101,-75.71546095,https://dunrae.com/wp-content/uploads/2024/07/1010somerset001.png,,,,World Design pg 170,,
+19,Reference,"Cambridge St North
+Woonerf Design",Infrastructure Design,PUB,45.41173515,-75.7070233,,,,,World Design pg 172,,
+20,Sketch,"Strandherd Roundabout
+& Land Use",Infrastructure Design,PUB,45.27064303,-75.70522976,,,,,World Design pg 180,,
+21,Sketch,"Viewmount Intersection
+Safety",Infrastructure Design,PUB,45.34388801,-75.7293381,,,,"Viewmount Intersection:
+Quick Build Safety
+Improvements",World Design pg 182,,17 Oct 2023
+22,WIP Design,"5th & Percy Modal
+Filter & Photomatch",Infrastructure Design,PUB,45.39940147,-75.69307155,https://dunrae.com/wp-content/uploads/2024/07/percy5th.png,,,,"World Design pg 185
+& Render (Drive)",,28 Oct 2023
+23,Finished Design,"The Mirrored Streets of
+Kent & O'Connor",Street Redesign,PUB,45.41410547,-75.6982268,https://dunrae.com/wp-content/uploads/2024/07/kentst001.png,,,,"Renders & Sketch
+World Design pg 198",,
+24,Finished Design,"Cooper Street
+Woonerf/Traffic Calming",Infrastructure Design,PUB,45.41258647,-75.70528142,https://dunrae.com/wp-content/uploads/2024/07/cooper001.png,,,,"Renders & Sketch
+World Design pg 204",,
+25,WIP Design,Greenboro P&R,Urban Development,PRI,45.36114903,-75.65837993,,,,,"Renders & Sketch
+World Design pg 205-206",,
+26,Finished Design,"Agincourt Park
+Redesign",Urban Development,PUB,45.36026261,-75.7538411,https://dunrae.com/wp-content/uploads/2024/07/agincourtpark001.jpeg,,,"Rethinking urban parks for anyone
+at any age.","New Ottawa pg 7 
+Renders (Drive)",,13 Jan 2023
+27,Sketch,"Clyde Woods: NCC
+Bistro and Cable Car",Urban Development,PUB,45.371054,-75.74542606,,,,,New Ottawa pg 24,,
+28,WIP Design,Ottawa Union Station,Infrastructure Design,PUB,45.42464538,-75.69371206,https://dunrae.com/wp-content/uploads/2024/07/unionstn-001.jpeg,,,"Returning Rail to Ottawa's
+historic downtown train station.","New Ottawa pg 46-52,
+pg 63-65",,9 Oct 2023
+29,WIP Design,Hurdman Village,Urban Development,PUB,45.41054001,-75.66830544,,,,"A thoughtful and expansive use of
+public land.","New Ottawa pg 53-54, 
+pg 70-72",,14 Oct 2023
+30,Sketch,Bywalk/Ottawa Avenue,"Infrastructure Design &
+Urban Development",PUB,45.40055241,-75.71943474,,,,"What if we took the queensway,
+and made it in a place to live?","World Design pg 
+New Ottawa pg 59",,
+31,Sketch ,HSR Capital Loop,Infrastructure Design,PUB,41.49939153,-76.1887127,,,,"A simple idea for an incredible
+connection.",Ideas & Sketches pg 71-77,,
+32,Finished Design,"Booth St Buildings
+Recreation",Urban Development,PUB,45.40269895,-75.70706604,https://dunrae.com/wp-content/uploads/2024/07/550DivisionStreet-pic003.png,,,"Re-creating a beautiful, traditional
+building near Dow's Lake.","Architecture pg 46 &
+Renders (Drive)",,18 Aug 2023
+33,WIP Design,"Undertrack Infill
+Designs",Infrastructure Design,PUB,45.35251959,-75.73408329,,,,"Research into urban integration of
+large infrastructure.","Architecture pg 55 &
+Renders (Drive)",,
+34,Finished Design,Carling Colonnades,Infrastructure Design,PUB-ish,45.39339662,-75.71717108,https://dunrae.com/wp-content/uploads/2024/07/pic016-2k.png,,,"A Grand Public Space and
+Main Transportation Spine
+through the Capital.","Architecture pg 59
+OttawaTransit pg 18-22, 
+pg 51-54 &
+Renders (Drive)",,"25 Jan 2024,
+12 Mar 2024"
+35,Finished Design,Bank Street Transit Mall,Street Redesign,PUB,45.40210456,-75.68786305,https://dunrae.com/wp-content/uploads/2024/07/bankst-001.png,,,The future of Bank Street.,Renders (Drive),,
+36,Sketch,Rose Tunnel,Infrastructure Design,PUB,45.435651,-75.68529995,,,OT67,"A Truck Bypass Tunnel Using A5 to
+Vanier Parkway, and interchange
+for the OT67 Metro.",OttawaTransit pg 33,,
+37,Sketch,Dow's Lake Causeway,Infrastructure Design,PUB-ish,45.39577002,-75.70290478,,,OT67,For QED Tramway,OttawaTransit pg 74,,
+38,Finished Design,"March Road / Kanata
+North Station",Infrastructure Design,PUB,45.33762932,-75.90910718,https://dunrae.com/wp-content/uploads/2024/07/marchstn-005.png,,OT67,"Preliminary Terminus for the
+Beachburg Line Rehabilitation","OttawaTransit pg 26 &
+Renders (Drive)",,2 Feb 2024
+39,WIP Design,College Quarter,Urban Development,PUB,45.35138676,-75.76060741,https://dunrae.com/wp-content/uploads/2024/07/collegequarter.png,,,"A New Urban Centre
+at Algonquin Station","College Quarter Workbook,
+College Ward pg 37-40
+Renders (Drive)",,
+40,Finished Design,Maitland Peanut,Street Redesign,PUB,45.36431654,-75.7479705,https://dunrae.com/wp-content/uploads/2024/07/maitlandpeanut.png,,,"A Simple Solution to a Notoriously
+Dangerous Intersection.","CollegeWard pg 76, 
+pg 7-14",,May 2024
+41,Finished Design,"Manor Towers Adaptive
+Reuse/Renovation",Urban Development,PUB,45.36145557,-75.74214021,,,,,College Ward pg 55,,
+42,Finished Design,Donnington Square,Urban Development,PUB,45.34029763,-75.79674316,https://dunrae.com/wp-content/uploads/2024/07/donnington001.jpeg,,,"A Re-imagining of vacant asphalt in
+a suburban setting.",Renders (Drive),,
+43,Finished Design,Veteran Ave,Urban Development,PUB,45.38613227,-75.72961617,https://dunrae.com/wp-content/uploads/2024/07/veteranave001.jpeg,,,,Renders (Drive),,
+44,Finished Design,"South Keys
+Transit Plaza","Urban Development &
+Infrastructure Design",PUB,45.35383034,-75.6549392,https://dunrae.com/wp-content/uploads/2024/07/southkeysplaza001.png,https://www.dunrae.com/south-keys-station,OT67,"Leaving South Keys with an
+amazing first impression.",Renders (Drive),,
+45,Finished Design,Carling LRT,Street Redesign,PUB,45.37793242,-75.75284596,https://dunrae.com/wp-content/uploads/2024/07/carlinglrt.jpeg,,OT67,"An optional design for an at-grade
+LRT along Carling Ave.",Renders (Drive),,
+46,Finished Design,Carling Elv Rail,Street Redesign,PUB,45.37092692,-75.76890122,https://dunrae.com/wp-content/uploads/2024/07/carlingelvrail-008.png,,OT67,"An optional design for elevated rail
+along Carling Ave.",Renders (Drive),,
+47,Finished Design,Iris/NCC Path,Street Redesign,PUB,45.35960499,-75.76031985,https://dunrae.com/wp-content/uploads/2024/07/irisnccpath.jpeg,,,"A beautiful pit-stop and 
+neighbourhood meeting place.",Renders (Drive),,
+48,Finished Design,Charkay Courtyard,Urban Development,PUB,45.35491587,-75.72414908,https://dunrae.com/wp-content/uploads/2024/07/charkay001.png,,,"Connecting suburban neighbours
+closer together.",Renders (Drive),,
+49,Reference,Fallen Tree Bridge,Infrastructure Design,PUB,45.43026108,-75.70459731,https://dunrae.com/wp-content/uploads/2024/07/fallentreebridge001.jpeg,https://www.youtube.com/watch?v=Sykm9i9aZeo,OT67,"by Kevin Desjardins
+(Atelier des Jardins)",Online,,
+50,Reference,"Deschenes Rapids
+Bridge",Infrastructure Design,PUB,45.37757785,-75.7994573,https://deschenesrapidsbridge.org/wp-content/uploads/2023/05/web1c-1024x576.png,https://deschenesrapidsbridge.org/,,by Jean-Pierre Caron,Online,"Deschenes Rapids
+Ped&Cyc Bridge
+https://www.cbc.ca/news/canada/ottawa/aylmer-man-proposes-crowdfunded-bridge-across-ottawa-river-1.6931958 ",
+51,Quick Idea,"Lemieux Island
+Amusement Park",Urban Development,PUB,45.41521311,-75.72979708,,,,Ottawa's Coney Island?,,,
+52,Sketch,Penicillin Park,Urban Development,PUB,45.41216253,-75.73517782,,,,"A beautiful, thoughful celebration of
+one of Canada's most important
+inventions.",,,
