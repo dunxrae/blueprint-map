@@ -1,4 +1,7 @@
 {
+  "name": "blueprint-map",
+  "version": "0.4.3",
+  "description": "",
   "dependencies": {
     "@mapbox/maki": "^8.0.1",
     "maki": "^2.1.0",

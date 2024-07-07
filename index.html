@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta name="theme-color" content="#273757" />
-    <title>Blueprint | RAE</title>
+    <title>RAE | Blueprint</title>
     <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no">
     <link href="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.css" rel="stylesheet">
     <link href="theme.css" rel="stylesheet">
-    <link href="./blueprint-icon.png" type="image/x-icon" rel="icon">
+    <link href="blueprint-favicon.png" type="image/x-icon" rel="icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
 </head>
@@ -30,7 +30,7 @@
                 </div>
                 <div class="pin-legend-item">
                     <img src="marker-icons/MARKER-WIP.png" alt="WIP Icon">
-                    <span>Unfinished</span>
+                    <span>Work In Progress</span>
                 </div>
                 <div class="pin-legend-item">
                     <img src="marker-icons/MARKER-SKETCH.png" alt="Sketch Icon">
@@ -72,6 +72,12 @@
 
         map.addControl(new mapboxgl.NavigationControl());
         map.scrollZoom.enable();
+        map.boxZoom.enable();
+        map.dragRotate.enable();
+        map.dragPan.enable();
+        map.keyboard.enable();
+        map.doubleClickZoom.enable();
+        map.touchZoomRotate.enable();
 
         map.on('style.load', () => {
             map.setFog({});
@@ -94,6 +100,8 @@
             map.on('mousedown', () => { userInteracting = true; });
             map.on('dragstart', () => { userInteracting = true; });
             map.on('click', () => { userInteracting = true; });
+            map.on('touchstart', () => { userInteracting = true; });
+            map.on('wheel', () => { userInteracting = true; });
 
             // Load GeoJSON data and add it to the map
             fetch('./pindata-002.geojson')
