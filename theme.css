@@ -82,7 +82,7 @@ body {
 }
 
 .welcome-modal-content {
-    background-color: rgba(10,10,10,0.5);
+    background-color: rgba(10, 10, 10, 0.5);
     color: #fff;
     padding: 20px 40px;
     /* border: 1px solid #888; */
@@ -219,15 +219,16 @@ body {
     background-color: black;
     color: white;
     padding: 10px;
-    width: 40em;
+    min-width: 40em;
+    max-width: auto;
     height: auto;
     line-height: 1.2;
     transform: translateX(-25%);
 }
 
 .popup-image {
-    width: 20em;
-    max-height: auto;
+    width: 100%;
+    height: auto;
     overflow: auto;
     margin-right: 10px;
     cursor: pointer;
@@ -241,4 +242,35 @@ body {
 
 .no-image .popup-info {
     width: 100%;
+}
+
+/* Media queries for small screens */
+@media (max-width: 600px),
+(max-width: 600px) and (min-resolution: 192dpi) {
+    .custom-popup {
+        flex-direction: column;
+        align-items: center;
+        min-width: 60vw;
+        max-width: 90vw;
+        height: auto;
+        transform: translateX(-4%);
+        padding: 10px;
+    }
+
+    .popup-image {
+        width: 100%;
+        height: auto;
+        margin: 0 0 10px 0;
+    }
+
+    .popup-info {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .image-modal,
+    .image-modal-content {
+        max-width: 100%;
+    }
 }
