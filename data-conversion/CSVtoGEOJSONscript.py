@@ -2,7 +2,7 @@ import pandas as pd
 import json
 
 # Load the CSV file
-file_path = 'pindata-002.csv'
+file_path = 'RAEBP-pindata003.csv'
 data = pd.read_csv(file_path, skiprows=2)
 
 # Mapping of Pin Type to Icons
@@ -45,7 +45,7 @@ geojson = {
 }
 
 # Save GeoJSON to a file
-output_file_path = './pindata-002.geojson'
+output_file_path = './pindata003.geojson'
 with open(output_file_path, 'w') as f:
     json.dump(geojson, f)
 

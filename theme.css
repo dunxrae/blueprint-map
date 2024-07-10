@@ -1,6 +1,7 @@
 a:link {
     text-decoration: none;
     color: #ffffff;
+    outline: none;
 }
 
 a:hover {
@@ -37,11 +38,15 @@ body {
     text-decoration: none;
 }
 
+.header {
+    z-index: 1;
+    position: fixed;
+    
+}
+
 .marker {
-    background-image: url('https://docs.mapbox.com/help/demos/custom-markers-gl-js/mapbox-icon.png');
-    background-size: cover;
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -191,8 +196,15 @@ body {
 
 .pin-legend {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.pin-legend-header {
+    width: 100%;
+    text-align: center;
+    padding-bottom: 15px;
 }
 
 .pin-legend-item {
@@ -202,8 +214,9 @@ body {
 .pin-legend-item img {
     display: block;
     margin: 0 auto;
-    width: 50px;
-    height: 50px;
+    padding-bottom: 10px;
+    width: 40px;
+    height: auto;
 }
 
 .pin-legend-item span {
@@ -217,13 +230,17 @@ body {
 .custom-popup {
     display: flex;
     background-color: black;
+    border: solid;
+    border-width: 2.5px;
+    border-radius: 10px;
+    border-color: black;
     color: white;
     padding: 10px;
     min-width: 40em;
     max-width: auto;
     height: auto;
     line-height: 1.2;
-    transform: translateX(-25%);
+    transform: translateX(-25%)translateY(50%);
 }
 
 .popup-image {
@@ -273,4 +290,25 @@ body {
     .image-modal-content {
         max-width: 100%;
     }
+
+    .pin-legend-item {
+        width: 25%;
+        padding-bottom: 30px;
+    }
+
+    .pin-legend-item img {
+        width: 30px;
+    }
+
+    .pin-legend-item span {
+        font-size: 10pt;
+    }
+
+    .welcome-modal-content {
+        transform: translateY(0%);
+        top: 0%;
+        height: 100%;
+        position: sticky;
+    }
+
 }
