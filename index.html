@@ -11,6 +11,8 @@
     <link href="blueprint-favicon.png" type="image/x-icon" rel="icon">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.4.0/mapbox-gl.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jscastro76/threebox@v.2.2.2/dist/threebox.min.js" type="text/javascript"></script>
+    <link href="https://cdn.jsdelivr.net/gh/jscastro76/threebox@v.2.2.2/dist/threebox.css" rel="stylesheet">
 </head>
 
 <body>
@@ -18,38 +20,49 @@
     <div id="welcomeModal" class="welcome-modal">
         <div class="welcome-modal-content">
             <span class="close">&times;</span>
-            <h2>Welcome to Blueprint, by RAE Spatial Design.</h2>
+            <h2>Welcome to Blueprint by <a href="https://www.dunrae.com">RAE Spatial Design.</a></h2>
             <p>This map features designs, renders, and sketches on how to improve areas and solve problems around
                 Ottawa. Most have been designed by myself, however, there are multiple references to other great designs
                 made by those in the NCR and abroad. Feel free to take a look around.</p>
-            <p>Cheers,<br>Duncan Rae</p>
             <div class="pin-legend">
+                <div class="pin-legend-header">
+                    <p style="font-weight: 600;">Pin Legend</p>
+                </div>
                 <div class="pin-legend-item">
-                    <img src="marker-icons/MARKER-FINISHED.png" alt="Finished Icon">
+                    <img src="marker-icons/marker-finished.png" alt="Finished Icon">
                     <span>Finished</span>
                 </div>
                 <div class="pin-legend-item">
-                    <img src="marker-icons/MARKER-WIP.png" alt="WIP Icon">
-                    <span>Work In Progress</span>
+                    <img src="marker-icons/marker-wip.png" alt="WIP Icon">
+                    <span>Work In<br>Progress</span>
                 </div>
                 <div class="pin-legend-item">
-                    <img src="marker-icons/MARKER-SKETCH.png" alt="Sketch Icon">
+                    <img src="marker-icons/marker-sketch.png" alt="Sketch Icon">
                     <span>Sketch</span>
                 </div>
                 <div class="pin-legend-item">
-                    <img src="marker-icons/MARKER-IDEA.png" alt="Idea Icon">
+                    <img src="marker-icons/marker-idea.png" alt="Idea Icon">
                     <span>Quick Idea</span>
                 </div>
                 <div class="pin-legend-item">
-                    <img src="marker-icons/MARKER-REFERENCE.png" alt="Reference Icon">
+                    <img src="marker-icons/marker-message.png" alt="Message Icon">
+                    <span>Text Post</span>
+                </div>
+                <div class="pin-legend-item">
+                    <img src="marker-icons/marker-reference.png" alt="Reference Icon">
                     <span>Reference</span>
+                </div>
+                <div class="pin-legend-item">
+                    <img src="marker-icons/marker-misc.png" alt="Misc Icon">
+                    <span>Misc</span>
                 </div>
             </div>
         </div>
     </div>
 
-    <a href="https://www.dunrae.com"><img src="blueprint-logo-white.png" alt="logo" class="logo"
-            style="height: 7.5vh;"></a>
+    <div class="header"><a href="https://www.dunrae.com"><img src="blueprint-logo-white.png" alt="logo" class="logo"
+        style="height: 7.5vh;"></a>
+    </div>
 
     <div id="map"></div>
 
@@ -64,24 +77,17 @@
         mapboxgl.accessToken = 'pk.eyJ1IjoiZHVueCIsImEiOiJja2UzYW96a2YwNGswMnJwbGJvcnRtejZpIn0.1hCPG-T_q9josI-gyJJUAw';
         const map = new mapboxgl.Map({
             container: 'map',
-            style: 'mapbox://styles/dunx/cly1m7tu700b101qog6pz3j9o',
+            style: 'mapbox://styles/dunx/clyc95yx600zo01qr9gn31kmf',
             zoom: 11,
             pitch: 60,
-            center: [-75.7011, 45.3947]
+            center: [-75.7011, 45.3947],
+            antialias: true
         });
 
+        // Nav Control (Zoom buttons)
         map.addControl(new mapboxgl.NavigationControl());
-        map.scrollZoom.enable();
-        map.boxZoom.enable();
-        map.dragRotate.enable();
-        map.dragPan.enable();
-        map.keyboard.enable();
-        map.doubleClickZoom.enable();
-        map.touchZoomRotate.enable();
-
-        map.on('style.load', () => {
-            map.setFog({});
-        });
+        map.addControl(new mapboxgl.FullscreenControl({ container: document.querySelector('body') }));
+        
 
         let userInteracting = false;
 
@@ -95,6 +101,8 @@
 
         let allFeatures = [];
 
+
+
         map.on('load', () => {
             rotateCamera(0);
             map.on('mousedown', () => { userInteracting = true; });
@@ -104,7 +112,7 @@
             map.on('wheel', () => { userInteracting = true; });
 
             // Load GeoJSON data and add it to the map
-            fetch('./pindata-002.geojson')
+            fetch('./pindata003.geojson')
                 .then(response => response.json())
                 .then(data => {
                     allFeatures = data.features;
@@ -145,29 +153,44 @@
                     });
 
                     // Add custom icons to the map
-                    map.loadImage('marker-icons/MARKER-FINISHED.png', (error, image) => {
+                    map.loadImage('marker-icons/marker-build.png', (error, image) => {
+                        if (error) throw error;
+                        map.addImage('marker-build', image);
+                    });
+
+                    map.loadImage('marker-icons/marker-finished.png', (error, image) => {
                         if (error) throw error;
                         map.addImage('marker-finished', image);
                     });
 
-                    map.loadImage('marker-icons/MARKER-WIP.png', (error, image) => {
+                    map.loadImage('marker-icons/marker-wip.png', (error, image) => {
                         if (error) throw error;
                         map.addImage('marker-wip', image);
                     });
 
-                    map.loadImage('marker-icons/MARKER-SKETCH.png', (error, image) => {
+                    map.loadImage('marker-icons/marker-sketch.png', (error, image) => {
                         if (error) throw error;
                         map.addImage('marker-sketch', image);
                     });
 
-                    map.loadImage('marker-icons/MARKER-IDEA.png', (error, image) => {
+                    map.loadImage('marker-icons/marker-idea.png', (error, image) => {
                         if (error) throw error;
                         map.addImage('marker-idea', image);
                     });
 
-                    map.loadImage('marker-icons/MARKER-REFERENCE.png', (error, image) => {
+                    map.loadImage('marker-icons/marker-message.png', (error, image) => {
+                        if (error) throw error;
+                        map.addImage('marker-message', image);
+                    });
+
+                    map.loadImage('marker-icons/marker-reference.png', (error, image) => {
                         if (error) throw error;
                         map.addImage('marker-reference', image);
+                    });
+
+                    map.loadImage('marker-icons/marker-misc.png', (error, image) => {
+                        if (error) throw error;
+                        map.addImage('marker-misc', image);
                     });
 
                     // Add marker layer
@@ -177,7 +200,7 @@
                         'source': 'allpins',
                         'layout': {
                             'icon-image': ['get', 'icon'],
-                            'icon-size': 0.25,
+                            'icon-size': 0.15,
                         }
                     });
 
@@ -210,29 +233,8 @@
                     });
                 });
 
-            // Function to add event listeners to links inside popups
-            function addPopupLinkListeners() {
-                console.log('Adding popup link listeners');
-                document.querySelectorAll('.link-to-pin').forEach(link => {
-                    console.log('Link found:', link); // Debugging log for each link found
-                    link.addEventListener('click', function (event) {
-                        event.preventDefault();
-                        const pinId = this.getAttribute('data-pin-id');
-                        console.log('Link clicked, pin ID:', pinId); // Debugging log
-
-                        // Find the target feature from all loaded features
-                        const targetFeature = allFeatures.find(feature => feature.properties.id === pinId);
-                        console.log('Target feature:', targetFeature); // Debugging log
-
-                        if (targetFeature) {
-                            map.flyTo({ center: targetFeature.geometry.coordinates, zoom: 15 });
-                        } else {
-                            console.log('Target feature not found');
-                        }
-                    });
-                });
-            }
         });
+
 
         // Modal functionality
         const modal = document.getElementById("welcomeModal");
@@ -280,8 +282,33 @@
 
         // ^^ Added for image modals
 
-    </script>
+        // Function to add event listeners to links inside popups
+        function addPopupLinkListeners() {
+            console.log('Adding popup link listeners');
+            document.querySelectorAll('.link-to-pin').forEach(link => {
+                console.log('Link found:', link); // Debugging log for each link found
+                link.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    const pinId = this.getAttribute('data-pin-id');
+                    console.log('Link clicked, pin ID:', pinId); // Debugging log
 
+                    // Find the target feature from all loaded features
+                    const targetFeature = allFeatures.find(feature => feature.properties.id === pinId);
+                    console.log('Target feature:', targetFeature); // Debugging log
+
+                    if (targetFeature) {
+                        map.flyTo({ center: targetFeature.geometry.coordinates, zoom: 15 });
+                    } else {
+                        console.log('Target feature not found');
+                    }
+                });
+            });
+        };
+
+    </script>
+    <script src="3dmodels.js"></script>
+    <script src="ot67lines.js"></script>
+    <script src="miscpolylines.js"></script>
 </body>
 
 </html>
